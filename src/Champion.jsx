@@ -7,7 +7,7 @@ import Spell from './Spell.jsx';
 export default class Champion extends Component {
   render() {
     const champion = this.props.champion;
-    const picture = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + champion.name + "_0.jpg";
+    const picture = "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" + champion.key + "_0.jpg";
     return (
       <div>
         <img src={picture}></img>
