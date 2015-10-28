@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
 
 export default class Spell extends Component {
+  constructor() {
+    super();
+    this.state = {
+      wantsSpellDescription : false
+    };
+  }
+
+  onMouseOverSpell(){
+      this.setState({wantsSpellDescription : true})
+  }
+
+  onMouseOutSpell(){
+      this.setState({wantsSpellDescription : false})
+  }
+
   render() {
+    
     const spell = this.props.spell;
 
     var cooldowns = spell.cooldown.reduce(function (previous, current) {
@@ -13,11 +29,11 @@ export default class Spell extends Component {
     });
 
     return (
-      <div style={{clear:'both'}}>
-        <div style={{clear:'both', fontWeight:'bold'}}>{spell.name}</div>
+      <div style={{clear:'both'}} onMouseOver={this.onMouseOverSpell.bind(this)} onMouseOut={this.onMouseOutSpell.bind(this)}>
+        <div style={{clear:'both', fontWeight:'bold'}} > {this.props.keybinding + ": " + spell.name}</div>
         <div style={{clear:'both'}}>Cooldown: {cooldowns}</div>
         <div style={{clear:'both'}}>Cost: {costs}</div>
-        <div style={{clear:'both'}}>{spell.description}</div>
+        {this.state.wantsSpellDescription ? <div style={{clear:'both'}}>{spell.description}</div> : <div></div>}
       </div>
     );
   }

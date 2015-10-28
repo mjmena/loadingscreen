@@ -15,7 +15,7 @@ export default class App extends Component {
     };
   }
 
-  handleChange(event) {
+  handleSummonerChange(event) {
     this.setState({
       summoner: event.target.value,
     });
@@ -49,7 +49,7 @@ export default class App extends Component {
       <div>
         <h1>loadingscreen.info</h1>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <input onChange={this.handleChange.bind(this)} placeholder='Summoner Name' type="text" value={this.state.summoner}/>
+          <input onChange={this.handleSummonerChange.bind(this)} placeholder='Summoner Name' type="text" value={this.state.summoner}/>
           <input type="submit" value="Submit" />
         </form>
         <ChampionList champions={this.state.champions}></ChampionList>
