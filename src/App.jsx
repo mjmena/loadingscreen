@@ -52,7 +52,7 @@ export default class App extends Component {
           <input onChange={this.handleSummonerChange.bind(this)} placeholder='Summoner Name' type="text" value={this.state.summoner}/>
           <input type="submit" value="Submit" />
         </form>
-        <ChampionList champions={this.state.champions}></ChampionList>
+         <ChampionList champions={this.state.champions}></ChampionList>
       </div>
     );
   }
