@@ -107,9 +107,7 @@ export function highlight(text){
   const highlightsForRegex = highlights.keySeq().reduce((previous, current) => {
     return previous+"\\b"+"|"+"\\b"+current;
   });
-
-  console.log(highlightsForRegex);
-
+  
   const highlightsRegExp = new RegExp("("+highlightsForRegex.replace(/_/g, "\\s")+")", "i")
   const description = text.split(highlightsRegExp).map((current, index) => {
     if(index % 2 === 1){

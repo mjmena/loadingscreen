@@ -31,7 +31,6 @@ export default class Spell extends Component {
         <div style={titleStyle}> {this.props.keybinding + ": " + spell.name}</div>
         <div>Cooldown: {cooldowns}</div>
         <div>Cost: {costs}</div>
-        <div>{description}</div>
       </div>
     );
   }

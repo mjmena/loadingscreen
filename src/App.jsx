@@ -30,7 +30,7 @@ export default class App extends Component {
       random_ids[random_ids.length] = randomnumber;
     }
 
-    const random_champions = random_ids.map(id => {
+    random_ids.map(id => {
       fetch('https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/' + champion_ids[id] + '?champData=allytips,enemytips,info,partype,passive,spells,stats&api_key=' + api_key)
       .then(res => {
         return res.json();
